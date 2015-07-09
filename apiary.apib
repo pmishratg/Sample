@@ -1,0 +1,202 @@
+FORMAT: 1A
+HOST: http://polls.apiblueprint.org/
+
+# Corporate
+
+API's for corporate integration of yatra mobile app(android) at controller level.
+
+# Corporate API Root [/]
+
+This resource does not have any attributes. Instead it offers the initial
+API affordances in the form of the links in the JSON body.
+
+It is recommend to follow the “url” link values,
+[Link](https://tools.ietf.org/html/rfc5988) or Location headers where
+applicable to retrieve resources. Instead of constructing your own URLs,
+to keep your client decoupled from implementation details.
+
+## Login Request [POST /login]
+Controller login API accepts email and password as mandatory params.
++ email (string) - Email Id of User
++ password (string) - Password of User
+
++ Request (application/json)
+
+        {
+            "email": "abc@xyz.com",
+            "password": "qwerty"
+        }
+
++ Response 200 (application/json)
+
+        {  
+           "authToken":"5ad0d390-8838-48e2-88fb-08a6eda00929",
+           "corporateName":"ABC Corporate",
+           "Tabs":[  
+              {  
+                 "TabName":"Flights",
+                 "TabDesc":"Book Domestic & International Flights"
+              },
+              {  
+                 "TabName":"Approvals",
+                 "TabDesc":"Check Your Approvals"
+              },
+              {  
+                 "TabName":"My Bookings",
+                 "TabDesc":"View Your Bookings"
+              }
+           ]
+        }
+
+
+## User Detail Request [POST /detail]
+Gets logged in user detail as per mandatory login token id and method
++ tokenId (string) - token generated as login service response
++ method (string) - method to be called at service end
+
++ Request (application/json)
+
+        {
+            "tokenId": "5ad0d390-8838-48e2-88fb-08a6eda00929",
+            "method": "getUserProfile"
+        }
+
++ Response 200 (application/json)
+
+        {  
+           "userId":3093092,
+           "address":[  
+              {  
+                 "label":"Name",
+                 "value":"Ms firstName LastName"
+              },
+              {  
+                 "label":"Login Email",
+                 "value":"ytbookings2@gmail.com"
+              },
+              {  
+                 "label":"Mobile Number",
+                 "value":"+91-8985235678"
+              }
+           ],
+           "details":[  
+              {  
+                 "label":"Employee Code",
+                 "value":"39049"
+              },
+              {  
+                 "label":"Cost Center",
+                 "value":"7668"
+              },
+              {  
+                 "label":"Project Code",
+                 "value":"6678"
+              }
+           ],
+           "freqFlyer":[  
+              {  
+                 "fc":"Al-213",
+                 "ffn":"766969967698"
+              },
+              {  
+                 "fc":"Al-213",
+                 "ffn":"766969967698"
+              },
+              {  
+                 "fc":"Al-213",
+                 "ffn":"766969967698"
+              }
+           ]
+        }
+
+## Profile Request [POST /profile]
+Gets logged in user detail as per mandatory login token id and method
++ tokenId (string) - token generated as login service response
++ method (string) - method to be called at service end
+
++ Request (application/json)
+
+        {
+            "tokenId": "5ad0d390-8838-48e2-88fb-08a6eda00929",
+            "method": "getCorporateProfile"
+        }
+
++ Response 200 (application/json)
+
+        {  
+           "address":{  
+              "corporateId":"777",
+              "companyName":"ABC Corporate Company",
+              "streetAddress":"xyz",
+              "streetAddress2":"abc",
+              "city":"Bangalore",
+              "state":"KA",
+              "country":"India",
+              "pincode":"803116",
+              "contactPhone":{  
+                 "countyCode":"+91",
+                 "stateCode":"0124",
+                 "phoneNumber":"3333400"
+              },
+              "logoURL":"https://yatra.com.img/1.jpg"
+           },
+           "additionalInfo":[  
+              {  
+                 "label":"Travel Adminstrator",
+                 "value":[  
+                    "Ms. Onika Thakur",
+                    "onika.thakur@yatra.com"
+                 ]
+              },
+              {  
+                 "label":"Available Credit Limit",
+                 "value":[  
+                    "INR 20,00,000"
+                 ]
+              },
+              {  
+                 "label":"Yatra Sales Incharge",
+                 "value":[  
+                    "Mr. Lalit Singh",
+                    "onika.thakur@yatra.com",
+                    "+91-8985235261"
+                 ]
+              }
+           ]
+        }
+        
+## Logout Request [POST /logout]
+Logs out user as per mandatory login token id and method
++ tokenId (string) - token passed for user to be logged out
++ method (string) - method to be called at service end
+
++ Request (application/json)
+
+        {
+            "tokenId": "5ad0d390-8838-48e2-88fb-08a6eda00929",
+            "method": "getLogoutProfile"
+        }
+
++ Response 200 (application/json)
+
+        {
+            "status":"200"
+        }
+        
+## Forgot Password Request [POST /forgotPassword]
+Logs out user as per mandatory login token id and method
++ email (string) - token passed for user to be logged out
++ method (string) - method to be called at service end
+
++ Request (application/json)
+
+        {
+            "email": "abc@xyz.com",
+            "method": "getLogoutProfile"
+        }
+
++ Response 200 (application/json)
+
+        {
+            "status":"200"
+        }
