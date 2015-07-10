@@ -795,7 +795,7 @@ Amount available in corporate account, mandatory login token id and method
         }
         
 ## SMS Booking Details Request [POST /smsBookingDetail]
-Amount available in corporate account, mandatory login token id and method
+Return if sms of booking was sent successfully or not, mandatory login token id,referencce no. and method
 + tokenId (string) - token passed for user to be logged out
 + referenceNo (string) - booking reference no.
 + method (string) - method to be called at service end
@@ -806,6 +806,26 @@ Amount available in corporate account, mandatory login token id and method
             "tokenId": "5ad0d390-8838-48e2-88fb-08a6eda00929",
             "referenceNo: "13603666", 
             "method": "smsBookingDetails"
+        }
+
++ Response 200 (application/json)
+
+        {
+        "status":"200"
+        }
+
+## Mail Booking Details Request [POST /mailBookingDetail]
+Return if mail of booking was sent successfully or not, mandatory login token id,referencce no. and method
++ tokenId (string) - token passed for user to be logged out
++ referenceNo (string) - booking reference no.
++ method (string) - method to be called at service end
+
++ Request (application/json)
+
+        {
+            "tokenId": "5ad0d390-8838-48e2-88fb-08a6eda00929",
+            "referenceNo: "13603666", 
+            "method": "mailBookingDetails"
         }
 
 + Response 200 (application/json)
