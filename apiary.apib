@@ -47,20 +47,14 @@ Controller login API accepts email and password as mandatory params.
               }
            ]
         }
-
-+ Request (application/json)
-
-        {
-            "email": "abc@xyz.com",
-            "password": "qwerty123"
-        }
-
-+ Response 200 (application/json)
++ Response 401 (application/json)
 
         {  
            "resCode":"401",
            "resMessage":"UserName and Password doesn't match"
         }
+
+
 
 ## User Detail Request [POST /detail]
 Gets logged in user detail as per mandatory login token id and method
