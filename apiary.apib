@@ -775,6 +775,22 @@ Approval detail for corporate booking, mandatory login token id and method
         "status":"200"
         }
         
++ Request (application/json)
+
+        {
+            "requestId": "763745",
+            "tokenId": "5ad0d390-8838-48e2-88fb-08a6eda00929",
+            "action: "reject",
+            "reason":"Budget limit crossed.",
+            "method": "approvalAction"
+        }
+
++ Response 200 (application/json)
+
+        {
+        "status":"200"
+        }
+        
 ## Available Balance Request [POST /availableBalance]
 Amount available in corporate account, mandatory login token id and method
 + tokenId (string) - token passed for user to be logged out
