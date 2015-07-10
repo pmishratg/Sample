@@ -305,7 +305,7 @@ Booking details of a corporate booking, mandatory login token id,reference No an
         {
             "tokenId": "5ad0d390-8838-48e2-88fb-08a6eda00929",
             "referenceNo: "13603666", 
-            "method": "myBookings"
+            "method": "getBookingDetails"
         }
 
 + Response 200 (application/json)
@@ -435,7 +435,7 @@ Approval of supervisor in corporate booking, mandatory login token id and method
 
         {
             "tokenId": "5ad0d390-8838-48e2-88fb-08a6eda00929",
-            "method": "myBookings"
+            "method": "getRequestApprovalDetails"
         }
 
 + Response 200 (application/json)
@@ -478,4 +478,141 @@ Approval of supervisor in corporate booking, mandatory login token id and method
                  "travellerName":"Kumar Akash"
               }
            ]
+        }
+        
+## Approval detail Request [POST /approvalDetail]
+Approval detail for corporate booking, mandatory login token id and method
++ email (string) - token passed for user to be logged out
++ referenceNo (string) - method to be called at service end
++ method (string) - method to be called at service end
+
++ Request (application/json)
+
+        {
+            "tokenId": "5ad0d390-8838-48e2-88fb-08a6eda00929",
+            "referenceNo: "14486420",
+            "method": "getBookingDetails"
+        }
+
++ Response 200 (application/json)
+
+        {  
+           "approvalInfo":{  
+              "approvalType":"Itenary",
+              "approvalStatus":"Pending",
+              "bookingStatus":"Pending",
+              "requestDate":"24/04/2015 06:30",
+              "approver":"Mr. Kumar Akash",
+              "approverMailId":"k.ak@yt.com",
+              "travelReason":"Training"
+           },
+           "flight":{  
+              "superPnr":"281114290205",
+              "tripType":"One Way",
+              "bookingType":"D",
+              "companyId":"YT",
+              "currencySymbol":"Rupees",
+              "requestId":"347992",
+              "flightInfo":[  
+                 {  
+                    "isPnrAppendedToURL":"false",
+                    "contactNumber":"011 2565 2050",
+                    "airLinesCode":"AI",
+                    "URL":"https://flyai.mobi/itravel/occi.xhtml",
+                    "isWebCheckinPrintoutRequired":"false",
+                    "airLinesName":"Airindia"
+                 }
+              ],
+              "legInfos":[  
+                 {  
+                    "departureCity":"Hyderabad",
+                    "arrivalCity":"Bangalore",
+                    "stops":"Non Stop",
+                    "legDetails":{  
+                       "baggage":[  
+                          {  
+                             "cabin":"7 Kg"
+                          },
+                          {  
+                             "checkin":"15 Kg"
+                          }
+                       ],
+                       "departureTime":"24/04/2015 06:30",
+                       "departureTerminal":"",
+                       "arrivalTerminal":"",
+                       "gdsPnr":"64DCKF",
+                       "airlinePnr":"HX99S",
+                       "arrivalDateTime":"2015-04-24T07:35+0530",
+                       "arrivalCity":"Bangalore",
+                       "yatraAirlineCode":"AI",
+                       "departureCity":"Hyderabad",
+                       "airlineCode":"AI",
+                       "departureCityCode":"HYD",
+                       "arrivalCityCode":"BLR",
+                       "status":"Confirmed",
+                       "departureDateTime":"2015-04-24T06:30+0530",
+                       "airlineName":"Airindia",
+                       "flightCode":"515",
+                       "duration":"1:5",
+                       "fareRule":"Refundable",
+                       "fareType":"Corporate Fare"
+                    }
+                 }
+              ]
+           },
+           "paxDetails":[  
+              {  
+                 "title":"",
+                 "firstName":"Gadepalliprasad",
+                 "middleName":"",
+                 "lastName":"Venkat",
+                 "type":"Adult",
+                 "status":"Confirmed"
+              },
+              {  
+                 "title":"",
+                 "firstName":"Venkat",
+                 "middleName":"",
+                 "lastName":"Prasad",
+                 "type":"Child",
+                 "status":"Confirmed"
+              },
+              {  
+                 "title":"",
+                 "firstName":"Prasad",
+                 "middleName":"",
+                 "lastName":"Gadepalli",
+                 "type":"Infant",
+                 "status":"Confirmed"
+              }
+           ],
+           "fareDetails":{  
+              "fareBreakup":[  
+                 {  
+                    "description":"Total Payable Amount",
+                    "amount":"5736.00"
+                 },
+                 {  
+                    "description":"Base fare (Adult x 1)",
+                    "amount":1
+                 },
+                 {  
+                    "description":"Base fare (Child x 1)",
+                    "amount":1
+                 },
+                 {  
+                    "description":"Base fare (Infant x 1)",
+                    "amount":1000
+                 },
+                 {  
+                    "description":"Taxes and surcharges",
+                    "amount":"4735.00"
+                 },
+                 {  
+                    "description":"Discount",
+                    "amount":-1,
+                    "fmtAmount":1
+                 }
+              ]
+           }
         }
