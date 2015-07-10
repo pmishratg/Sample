@@ -849,3 +849,65 @@ Return if mail of booking was sent successfully or not, mandatory login token id
         {
         "status":"200"
         }
+
+## Booking search Request(List booking ids) [POST /air-service/mdomandroid/trigger]
+Return list of booking ids, mandatory login token id,referencce no. and method
+
+
++ Request (application/json)
+
+        {
+            "CHD": "3",
+            "flexi: "0", 
+            "noOfSegments": "1",
+            "origin":"PAT",
+            "class":"economy",
+            "type":"R",
+            "b2c":"true",
+            "ADT":"3",
+            "destination":"BLR",
+            "flight_depart_date":"19/04/2016",
+            "viewName":"normal",
+            "originCountry":"IN",
+            "destinationCountry":"IN",
+            "arrivalDate":"17/04/2016",
+            "INF":"0"
+        }
+
++ Response 200 (application/json)
+
+        {
+        "eagerFetch": "false",
+        "pollingIds":  [
+        "630eabb5-ac2a-4d39-babf-6dfcffd8a802_G8FQ",
+        "630eabb5-ac2a-4d39-babf-6dfcffd8a802_1AVPNMOBILE",
+        "630eabb5-ac2a-4d39-babf-6dfcffd8a802_6EAPINavi"
+            ],
+        "requestParams":  {
+        "INF": "0",
+        "clientIpAddress": "1921681845",
+        "origin": "PAT",
+        "destination": "BLR",
+        "type": "R",
+        "destinationCountry": "IN",
+        "noOfSegments": "1",
+        "arrivalDate": "17/04/2016",
+        "userAgentInfo": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_4) AppleWebKit/600.7.12 (KHTML, like Gecko) Version/8.0.7 Safari/600.7.12",
+        "ADT": "3",
+        "b2c": "true",
+        "flight_depart_date": "19/04/2016",
+        "viewName": "normal",
+        "searchId": "630eabb5-ac2a-4d39-babf-6dfcffd8a802",
+        "originCountry": "IN",
+        "hostIpAddress": "90",
+        "requestMode": "Background",
+        "CHD": "3",
+        "browserInfo": "Safari 8.0.7",
+        "flexi": "0"
+        },
+        "pollingDelay":  {
+        "6EAPINavi": 2828,
+        "1AVPNMOBILE": 561,
+        "G8FQ": 1005
+        }
+        }
