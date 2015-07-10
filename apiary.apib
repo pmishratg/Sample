@@ -203,7 +203,7 @@ Logs out user as per mandatory login token id and method
 
 ## My Bookings Request [POST /mybooking]
 Booking list for corporate user, mandatory login token id and method
-+ email (string) - token passed for user to be logged out
++ tokenId (string) - token passed for user to be logged out
 + method (string) - method to be called at service end
 
 + Request (application/json)
@@ -296,7 +296,7 @@ Booking list for corporate user, mandatory login token id and method
         
 ## My Booking Details Request [POST /myBookingDetails]
 Booking details of a corporate booking, mandatory login token id,reference No and method
-+ email (string) - token passed for user to be logged out
++ tokenId (string) - token passed for user to be logged out
 + referenceNo (string) - booking reference number
 + method (string) - method to be called at service end
 
@@ -428,7 +428,7 @@ Booking details of a corporate booking, mandatory login token id,reference No an
 
 ## Approval home Request [POST /approvalHome]
 Approval of supervisor in corporate booking, mandatory login token id and method
-+ email (string) - token passed for user to be logged out
++ tokenId (string) - token passed for user to be logged out
 + method (string) - method to be called at service end
 
 + Request (application/json)
@@ -482,7 +482,7 @@ Approval of supervisor in corporate booking, mandatory login token id and method
         
 ## Approval detail Request [POST /approvalDetail]
 Approval detail for corporate booking, mandatory login token id and method
-+ email (string) - token passed for user to be logged out
++ tokenId (string) - token passed for user to be logged out
 + referenceNo (string) - reference no. of booking
 + method (string) - method to be called at service end
 
@@ -619,7 +619,7 @@ Approval detail for corporate booking, mandatory login token id and method
         
 ## Supervisor detail Request [POST /supervisorApprovalDetail]
 Approval detail for corporate booking, mandatory login token id and method
-+ email (string) - token passed for user to be logged out
++ tokenId (string) - token passed for user to be logged out
 + referenceNo (string) - reference no. of booking
 + method (string) - method to be called at service end
 
@@ -750,4 +750,27 @@ Approval detail for corporate booking, mandatory login token id and method
                  }
               ]
            }
+        }
+        
+## Approval Action Request [POST /approvalAction]
+Approval detail for corporate booking, mandatory login token id and method
++ tokenId (string) - token passed for user to be logged out
++ action (string) - action taken by supervisor ie: accept/reject
++ reason (string) - reason for rejection if supervisor rejects the booking
++ method (string) - method to be called at service end
+
++ Request (application/json)
+
+        {
+            "requestId": "763746",
+            "tokenId": "5ad0d390-8838-48e2-88fb-08a6eda00929",
+            "action: "accept",
+            "reason":"",
+            "method": "approvalAction"
+        }
+
++ Response 200 (application/json)
+
+        {
+        "status":"200"
         }
