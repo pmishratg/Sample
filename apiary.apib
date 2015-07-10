@@ -774,3 +774,42 @@ Approval detail for corporate booking, mandatory login token id and method
         {
         "status":"200"
         }
+        
+## Available Balance Request [POST /availableBalance]
+Amount available in corporate account, mandatory login token id and method
++ tokenId (string) - token passed for user to be logged out
++ method (string) - method to be called at service end
+
++ Request (application/json)
+
+        {
+            "tokenId": "5ad0d390-8838-48e2-88fb-08a6eda00929",
+            "method": "getAvailableBalance"
+        }
+
++ Response 200 (application/json)
+
+         {
+            "status":"200", 
+            "amount":"INR 5,000"
+        }
+        
+## SMS Booking Details Request [POST /smsBookingDetail]
+Amount available in corporate account, mandatory login token id and method
++ tokenId (string) - token passed for user to be logged out
++ referenceNo (string) - booking reference no.
++ method (string) - method to be called at service end
+
++ Request (application/json)
+
+        {
+            "tokenId": "5ad0d390-8838-48e2-88fb-08a6eda00929",
+            "referenceNo: "13603666", 
+            "method": "smsBookingDetails"
+        }
+
++ Response 200 (application/json)
+
+        {
+        "status":"200"
+        }
