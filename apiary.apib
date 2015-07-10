@@ -200,3 +200,282 @@ Logs out user as per mandatory login token id and method
         {
             "status":"200"
         }
+
+## My Bookings Request [POST /mybooking]
+Booking list for corporate user, mandatory login token id and method
++ email (string) - token passed for user to be logged out
++ method (string) - method to be called at service end
+
++ Request (application/json)
+
+        {
+            "tokenId": "5ad0d390-8838-48e2-88fb-08a6eda00929",
+            "method": "myBookings"
+        }
+
++ Response 200 (application/json)
+
+        {  
+           "trips":{  
+              "upcoming":[  
+                 {  
+                    "startDate":"03/09/2015",
+                    "bookingDate":"07/05/2015",
+                    "status":"Upcoming",
+                    "isReturn":"N",
+                    "origin":"GOI",
+                    "bookingType":"D",
+                    "bookingMode":"online",
+                    "pnr":"0705151073",
+                    "endDate":"03/09/2015",
+                    "miles":"9",
+                    "productType":"flight",
+                    "destination":"BOM",
+                    "companyId":"YT",
+                    "referenceNo":"14486172",
+                    "travellerName":"Kumar Akash"
+                 },
+                 {  
+                    "startDate":"03/09/2015",
+                    "bookingDate":"07/05/2015",
+                    "status":"Upcoming",
+                    "isReturn":"N",
+                    "origin":"GOI",
+                    "bookingType":"D",
+                    "bookingMode":"online",
+                    "pnr":"0705151073",
+                    "endDate":"03/09/2015",
+                    "miles":"9",
+                    "productType":"flight",
+                    "destination":"BOM",
+                    "companyId":"YT",
+                    "referenceNo":"14486172",
+                    "travellerName":"Kumar Akash"
+                 }
+              ],
+              "cancelled":[  
+                 {  
+                    "startDate":"15/12/2015",
+                    "bookingDate":"07/05/2015",
+                    "status":"Cancelled",
+                    "isReturn":"N",
+                    "origin":"DEL",
+                    "bookingType":"D",
+                    "bookingMode":"online",
+                    "pnr":"07051586867",
+                    "endDate":"15/12/2015",
+                    "miles":"11",
+                    "productType":"flight",
+                    "destination":"JAI",
+                    "companyId":"YT",
+                    "referenceNo":"14486420",
+                    "travellerName":"Kumar Akash"
+                 }
+              ],
+              "completed":[  
+                 {  
+                    "startDate":"24/04/2015",
+                    "bookingDate":"28/11/2014",
+                    "status":"Completed",
+                    "isReturn":"N",
+                    "origin":"HYD",
+                    "bookingType":"D",
+                    "bookingMode":"online",
+                    "pnr":"281114290205",
+                    "endDate":"24/04/2015",
+                    "miles":"22",
+                    "productType":"flight",
+                    "destination":"BLR",
+                    "companyId":"YT",
+                    "referenceNo":"13603666",
+                    "travellerName":"Kumar Akash"
+                 }
+              ]
+           }
+        }
+        
+## My Booking Details Request [POST /myBookingDetails]
+Booking details of a corporate booking, mandatory login token id,reference No and method
++ email (string) - token passed for user to be logged out
++ referenceNo (string) - booking reference number
++ method (string) - method to be called at service end
+
++ Request (application/json)
+
+        {
+            "tokenId": "5ad0d390-8838-48e2-88fb-08a6eda00929",
+            "referenceNo: "13603666", 
+            "method": "myBookings"
+        }
+
++ Response 200 (application/json)
+        
+        {  
+           "response":{  
+              "flight":{  
+                 "superPnr":"281114290205",
+                 "tripType":"One Way",
+                 "bookingType":"D",
+                 "companyId":"YT",
+                 "currencySymbol":"Rupees",
+                 "bookingCartNumber":"CT111",
+                 "flightInfo":[  
+                    {  
+                       "isPnrAppendedToURL":"false",
+                       "contactNumber":"011 2565 2050",
+                       "airLinesCode":"AI",
+                       "URL":"https://flyai.mobi/itravel/occi.xhtml",
+                       "isWebCheckinPrintoutRequired":"false",
+                       "airLinesName":"Airindia"
+                    }
+                 ],
+                 "legInfos":[  
+                    {  
+                       "departureCity":"Hyderabad",
+                       "arrivalCity":"Bangalore",
+                       "stops":"Non Stop",
+                       "legDetails":[  
+                          {  
+                             "baggage":[  
+                                {  
+                                   "cabin":"7 Kg"
+                                },
+                                {  
+                                   "checkin":"15 Kg"
+                                }
+                             ],
+                             "departureTime":"24/04/2015 06:30",
+                             "departureTerminal":"",
+                             "arrivalTerminal":"",
+                             "gdsPnr":"64DCKF",
+                             "airlinePnr":"HX99S",
+                             "arrivalDateTime":"2015-04-24T07:35+0530",
+                             "arrivalCity":"Bangalore",
+                             "yatraAirlineCode":"AI",
+                             "departureCity":"Hyderabad",
+                             "airlineCode":"AI",
+                             "departureCityCode":"HYD",
+                             "arrivalCityCode":"BLR",
+                             "status":"Confirmed",
+                             "departureDateTime":"2015-04-24T06:30+0530",
+                             "airlineName":"Airindia",
+                             "flightCode":"515",
+                             "duration":"1:5",
+                             "fareRule":"Refundable",
+                             "fareType":"Corporate Fare"
+                          }
+                       ]
+                    }
+                 ],
+                 "paxDetails":[  
+                    {  
+                       "title":"",
+                       "firstName":"Gadepalliprasad",
+                       "middleName":"",
+                       "lastName":"Venkat",
+                       "type":"Adult",
+                       "status":"Confirmed"
+                    },
+                    {  
+                       "title":"",
+                       "firstName":"Venkat",
+                       "middleName":"",
+                       "lastName":"Prasad",
+                       "type":"Child",
+                       "status":"Confirmed"
+                    },
+                    {  
+                       "title":"",
+                       "firstName":"Prasad",
+                       "middleName":"",
+                       "lastName":"Gadepalli",
+                       "type":"Infant",
+                       "status":"Confirmed"
+                    }
+                 ],
+                 "fareDetails":{  
+                    "fareBreakup":[  
+                       {  
+                          "description":"Total Payable Amount",
+                          "amount":"5736.00"
+                       },
+                       {  
+                          "description":"Base fare (Adult x 1)",
+                          "amount":1
+                       },
+                       {  
+                          "description":"Base fare (Child x 1)",
+                          "amount":1
+                       },
+                       {  
+                          "description":"Base fare (Infant x 1)",
+                          "amount":1000
+                       },
+                       {  
+                          "description":"Taxes and surcharges",
+                          "amount":"4735.00"
+                       },
+                       {  
+                          "description":"Discount",
+                          "amount":-1,
+                          "fmtAmount":1
+                       }
+                    ]
+                 }
+              }
+           }
+        }
+
+## Approval home Request [POST /approvalHome]
+Approval of supervisor in corporate booking, mandatory login token id and method
++ email (string) - token passed for user to be logged out
++ method (string) - method to be called at service end
+
++ Request (application/json)
+
+        {
+            "tokenId": "5ad0d390-8838-48e2-88fb-08a6eda00929",
+            "method": "myBookings"
+        }
+
++ Response 200 (application/json)
+
+        {  
+           "approvalRequest":[  
+              {  
+                 "startDate":"15/12/2015",
+                 "bookingDate":"07/05/2015",
+                 "isReturn":"N",
+                 "origin":"DEL",
+                 "bookingType":"D",
+                 "bookingMode":"online",
+                 "pnr":"07051586867",
+                 "endDate":"15/12/2015",
+                 "miles":"11",
+                 "productType":"flight",
+                 "destination":"JAI",
+                 "companyId":"YT",
+                 "referenceNo":"14486420",
+                 "travellerName":"Kumar Akash",
+                 "approvalStatus":"Declined"
+              }
+           ],
+           "supervisor":[  
+              {  
+                 "startDate":"15/12/2015",
+                 "bookingDate":"07/05/2015",
+                 "isReturn":"N",
+                 "origin":"DEL",
+                 "bookingType":"D",
+                 "bookingMode":"online",
+                 "pnr":"07051586867",
+                 "endDate":"15/12/2015",
+                 "miles":"11",
+                 "productType":"flight",
+                 "destination":"JAI",
+                 "companyId":"YT",
+                 "referenceNo":"14486420",
+                 "travellerName":"Kumar Akash"
+              }
+           ]
+        }
