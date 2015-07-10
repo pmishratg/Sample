@@ -850,9 +850,11 @@ Return if mail of booking was sent successfully or not, mandatory login token id
         "status":"200"
         }
 
-## Booking search Request(List booking ids) [POST /air-service/mdomandroid/trigger]
+## Booking search- list booking ids Request [POST /air-service/mdomandroid/trigger]
 Return list of booking ids, mandatory login token id,referencce no. and method
-
++ tokenId (string) - token passed for user to be logged out
++ referenceNo (string) - booking reference no.
++ method (string) - method to be called at service end
 
 + Request (application/json)
 
