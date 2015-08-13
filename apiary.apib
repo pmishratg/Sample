@@ -641,23 +641,23 @@ Approval detail for corporate booking, mandatory login token id and method
 
 + Response 200 (application/json)
 
-        {  
-           "approvalInfo":{  
+           { 
+           "approvalInfo":{ 
               "approvalType":"Itenary",
               "approvalStatus":"Pending",
               "travelReason":"Training",
               "requestDate":"24/04/2015 06:30:00",
               "extraBuffer":"1000"
            },
-           "flight":{  
+           "flight":{ 
               "superPnr":"281114290205",
               "tripType":"One Way",
               "bookingType":"D",
               "companyId":"YT",
               "currencySymbol":"Rupees",
               "requestId":"347992",
-              "flightInfo":[  
-                 {  
+              "flightInfo":[ 
+                 { 
                     "isPnrAppendedToURL":"false",
                     "contactNumber":"011 2565 2050",
                     "airLinesCode":"AI",
@@ -678,14 +678,14 @@ Approval detail for corporate booking, mandatory login token id and method
                 "flight":"9W-795/6E-795"
                 }
               ],
-              "legInfos":[  
-                 {  
+              "legInfos":[ 
+                 { 
                     "departureCity":"Hyderabad",
                     "arrivalCity":"Bangalore",
                     "stops":"Non Stop",
-                    "legDetails":{  
-                       "baggage":  
-                          {  
+                    "legDetails":{ 
+                       "baggage": 
+                          { 
                              "cabin":"7 Kg"
                              "checkin":"15 Kg"
                           },
@@ -713,8 +713,8 @@ Approval detail for corporate booking, mandatory login token id and method
                  }
               ]
            },
-           "paxDetails":[  
-              {  
+           "paxDetails":[ 
+              { 
                  "title":"",
                  "firstName":"Gadepalliprasad",
                  "middleName":"",
@@ -722,7 +722,7 @@ Approval detail for corporate booking, mandatory login token id and method
                  "type":"Adult",
                  "status":"Confirmed"
               },
-              {  
+              { 
                  "title":"",
                  "firstName":"Venkat",
                  "middleName":"",
@@ -730,7 +730,7 @@ Approval detail for corporate booking, mandatory login token id and method
                  "type":"Child",
                  "status":"Confirmed"
               },
-              {  
+              { 
                  "title":"",
                  "firstName":"Prasad",
                  "middleName":"",
@@ -738,39 +738,45 @@ Approval detail for corporate booking, mandatory login token id and method
                  "type":"Infant",
                  "status":"Confirmed"
               }
-           ],
-           "fareDetails":{  
-              "fareBreakup":[  
-                 "Total Amount":"amount":"5736.00"
-                 {  
+           ],                                    
+           "fareDetails":{             
+                    "paxFareDetail":{
+                        "ADT":"1",
+                        "CHD":"1",
+                        "INF":"1"
+                        }
+                    },
+              "fareBreakup":[ 
+                 "Total Amount":"5736.00",
+                 { 
                     "description":"Base fare (Adult x 1)",
                     "amount":1
                  },
-                 {  
+                 { 
                     "description":"Base fare (Child x 1)",
                     "amount":1
                  },
-                 {  
+                 { 
                     "description":"Base fare (Infant x 1)",
                     "amount":1000
                  },
-                  {  
+                  { 
                     "description":"Booking Fee",
                     "amount":1000
                  },
-                  {  
+                  { 
                     "description":"Service Tax",
                     "amount":1000
                  },
-                  {  
+                  { 
                     "description":"Extra Meal & Baggage",
                     "amount":1000
                  },
-                 {  
+                 { 
                     "description":"Taxes and surcharges",
                     "amount":"4735.00"
                  },
-                 {  
+                 { 
                     "description":"Discount",
                     "amount":-1,
                     "fmtAmount":1
